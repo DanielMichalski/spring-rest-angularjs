@@ -3,13 +3,13 @@ package pl.dmichalski.rest.entity;
 /**
  * Author: Daniel
  */
-public class BlogEntry {
+public class Blog {
 
     private Long id;
 
     private String title;
 
-    private Blog blog;
+    private Account owner;
 
     public Long getId() {
         return id;
@@ -27,11 +27,11 @@ public class BlogEntry {
         this.title = title;
     }
 
-    public Blog getBlog() {
-        return blog;
+    public Account getOwner() {
+        return owner;
     }
 
-    public void setBlog(Blog blog) {
-        this.blog = blog;
+    public void setOwner(Account owner) {
+        this.owner = owner;
     }
 }

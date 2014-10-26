@@ -7,6 +7,10 @@ import pl.dmichalski.rest.entity.BlogEntry;
  */
 public interface BlogEntryService {
 
-    public BlogEntry find(Long id);
+    BlogEntry findBlogEntry(Long id);
+
+    BlogEntry deleteBlogEntry(Long id);
+
+    BlogEntry updateblogEntry(Long id, BlogEntry data);
 
 }

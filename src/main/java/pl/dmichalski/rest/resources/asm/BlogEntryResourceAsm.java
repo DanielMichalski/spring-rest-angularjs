@@ -1,7 +1,6 @@
 package pl.dmichalski.rest.resources.asm;
 
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import pl.dmichalski.rest.controller.BlogEntryController;
 import pl.dmichalski.rest.entity.BlogEntry;
