@@ -14,24 +14,18 @@ import javax.annotation.Resource;
  * Author: Daniel
  */
 @Controller
+@RequestMapping("/rest/blog-entries")
 public class BlogEntryController {
 
     @Resource
     private BlogEntryService service;
-
-    @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody BlogEntry getBlogEntry() {
-        BlogEntry entry = new BlogEntry();
-        entry.setTitle("Test title");
-        return entry;
-    }
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody BlogEntry postBlogEntry(@RequestBody BlogEntry blogEntry) {
         return blogEntry;
     }
 
-    @RequestMapping(value = "/blog-entries/{blogEntryId}",method = RequestMethod.GET)
+    @RequestMapping(value = "/{blogEntryId}",method = RequestMethod.GET)
     public @ResponseBody BlogEntryResource getBlogEntry(@PathVariable Long blogEntryId) {
         BlogEntry blogEntry = service.find(blogEntryId);
 
