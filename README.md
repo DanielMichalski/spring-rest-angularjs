@@ -16,14 +16,14 @@ This project is Spring Data REST + JPA + AngularJS Web application.
 
 * Install node.js from website
 * Run the Command Prompt as administrator and run commands:
-> npm install -g grunt-cli <br />
-> npm install -g bower
+<p>npm install -g grunt-cli</p>
+<p>npm install -g bower</p>
 * Change directory to your project webapp folder src/main/webapp and run command:
-> git clone https://github.com/ngbp/ngbp.git app
+<p>git clone https://github.com/ngbp/ngbp.git app</p>
 * Change directory to src/main/webapp/app folder and run commands:
-> npm install <br />
-> bower install <br />
-> grunt watch
+<p>npm install</p>
+<p>bower install</p>
+<p>grunt watch</p>
 * Download live reload extension to your webbrowser from link:
-> https://github.com/ngbp/ngbp  -  link is on the bottom of site
+<p>https://github.com/ngbp/ngbp  -  link is on the bottom of site</p>
 
