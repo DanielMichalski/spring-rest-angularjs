@@ -1,12 +1,12 @@
 package pl.dmichalski.rest.resources;
 
 import org.springframework.hateoas.ResourceSupport;
+import pl.dmichalski.core.models.entities.Account;
 
 /**
  * Author: Daniel
  */
 public class AccountResource extends ResourceSupport {
-
     private String name;
 
     private String password;
@@ -27,4 +27,10 @@ public class AccountResource extends ResourceSupport {
         this.password = password;
     }
 
+    public Account toAccount() {
+        Account account = new Account();
+        account.setName(name);
+        account.setPassword(password);
+        return account;
+    }
 }

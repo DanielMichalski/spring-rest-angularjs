@@ -2,8 +2,9 @@ package pl.dmichalski.rest.resources.asm;
 
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
-import pl.dmichalski.rest.controller.BlogEntryController;
-import pl.dmichalski.rest.entity.BlogEntry;
+import pl.dmichalski.core.models.entities.BlogEntry;
+import pl.dmichalski.rest.mvc.BlogController;
+import pl.dmichalski.rest.mvc.BlogEntryController;
 import pl.dmichalski.rest.resources.BlogEntryResource;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
@@ -18,11 +19,14 @@ public class BlogEntryResourceAsm extends ResourceAssemblerSupport<BlogEntry, Bl
     }
 
     @Override
-    public BlogEntryResource toResource(BlogEntry entity) {
+    public BlogEntryResource toResource(BlogEntry blogEntry) {
         BlogEntryResource res = new BlogEntryResource();
-        res.setTitle(entity.getTitle());
-        Link link = linkTo(methodOn(BlogEntryController.class).getBlogEntry(entity.getId())).withSelfRel();
-        res.add(link.withSelfRel());
+        res.setTitle(blogEntry.getTitle());
+        Link self = linkTo(BlogEntryController.class).slash(blogEntry.getId()).withSelfRel();
+        res.add(self);
+        if (blogEntry.getBlog() != null) {
+            res.add((linkTo(BlogController.class).slash(blogEntry.getBlog().getId()).withRel("blog")));
+        }
         return res;
     }
 }

@@ -1,16 +1,13 @@
 package pl.dmichalski.rest.resources;
 
 import org.springframework.hateoas.ResourceSupport;
-import pl.dmichalski.rest.entity.Account;
+import pl.dmichalski.core.models.entities.BlogEntry;
 
 /**
  * Author: Daniel
  */
 public class BlogEntryResource extends ResourceSupport {
-
     private String title;
-
-    private Account owner;
 
     public String getTitle() {
         return title;
@@ -20,12 +17,9 @@ public class BlogEntryResource extends ResourceSupport {
         this.title = title;
     }
 
-    public Account getOwner() {
-        return owner;
+    public BlogEntry toBlogEntry() {
+        BlogEntry entry = new BlogEntry();
+        entry.setTitle(title);
+        return entry;
     }
-
-    public void setOwner(Account owner) {
-        this.owner = owner;
-    }
-
 }

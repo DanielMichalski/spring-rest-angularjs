@@ -1,6 +1,7 @@
 package pl.dmichalski.rest.resources;
 
 import org.springframework.hateoas.ResourceSupport;
+import pl.dmichalski.core.models.entities.Blog;
 
 /**
  * Author: Daniel
@@ -17,4 +18,9 @@ public class BlogResource extends ResourceSupport {
         this.title = title;
     }
 
+    public Blog toBlog() {
+        Blog blog = new Blog();
+        blog.setTitle(title);
+        return blog;
+    }
 }
