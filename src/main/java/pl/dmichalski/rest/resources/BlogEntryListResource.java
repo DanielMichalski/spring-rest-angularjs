@@ -8,6 +8,7 @@ import java.util.List;
  * Author: Daniel
  */
 public class BlogEntryListResource extends ResourceSupport {
+
     private String title;
 
     private List<BlogEntryResource> entries;
@@ -27,4 +28,5 @@ public class BlogEntryListResource extends ResourceSupport {
     public void setEntries(List<BlogEntryResource> entries) {
         this.entries = entries;
     }
+
 }

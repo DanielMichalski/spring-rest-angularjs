@@ -20,4 +20,5 @@ public class BlogListResourceAsm extends ResourceAssemblerSupport<BlogList, Blog
         res.setBlogs(new BlogResourceAsm().toResources(blogList.getBlogs()));
         return res;
     }
+
 }

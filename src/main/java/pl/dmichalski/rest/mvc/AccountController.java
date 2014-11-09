@@ -13,6 +13,7 @@ import pl.dmichalski.core.models.entities.Blog;
 import pl.dmichalski.core.services.AccountService;
 import pl.dmichalski.core.services.exceptions.AccountDoesNotExistException;
 import pl.dmichalski.core.services.exceptions.AccountExistsException;
+import pl.dmichalski.core.services.exceptions.BlogExistsException;
 import pl.dmichalski.rest.exceptions.BadRequestException;
 import pl.dmichalski.rest.exceptions.ConflictException;
 import pl.dmichalski.rest.resources.AccountResource;
@@ -75,10 +76,11 @@ public class AccountController {
             HttpHeaders headers = new HttpHeaders();
             headers.setLocation(URI.create(createdBlogRes.getLink("self").getHref()));
             return new ResponseEntity<BlogResource>(createdBlogRes, headers, HttpStatus.CREATED);
-        } catch (AccountDoesNotExistException exception) {
-            throw new BadRequestException(exception);
+        } catch (AccountDoesNotExistException e) {
+            throw new BadRequestException(e);
+        } catch (BlogExistsException e) {
+            throw new ConflictException(e);
         }
     }
-
 
 }

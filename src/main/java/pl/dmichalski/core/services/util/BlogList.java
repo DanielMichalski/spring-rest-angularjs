@@ -19,4 +19,5 @@ public class BlogList {
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
     }
+
 }

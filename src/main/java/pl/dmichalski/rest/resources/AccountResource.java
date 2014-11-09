@@ -1,5 +1,7 @@
 package pl.dmichalski.rest.resources;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.ResourceSupport;
 import pl.dmichalski.core.models.entities.Account;
 
@@ -7,7 +9,9 @@ import pl.dmichalski.core.models.entities.Account;
  * Author: Daniel
  */
 public class AccountResource extends ResourceSupport {
+
     private String name;
+
 
     private String password;
 
@@ -19,10 +23,12 @@ public class AccountResource extends ResourceSupport {
         this.name = name;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }
 
+    @JsonProperty
     public void setPassword(String password) {
         this.password = password;
     }
@@ -33,4 +39,5 @@ public class AccountResource extends ResourceSupport {
         account.setPassword(password);
         return account;
     }
+
 }

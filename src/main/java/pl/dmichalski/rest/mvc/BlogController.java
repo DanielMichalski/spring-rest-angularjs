@@ -32,6 +32,7 @@ import java.net.URI;
 @Controller
 @RequestMapping("/rest/blogs")
 public class BlogController {
+
     private BlogService blogService;
 
     public BlogController(BlogService blogService) {

@@ -7,6 +7,7 @@ import pl.dmichalski.core.models.entities.BlogEntry;
  * Author: Daniel
  */
 public class BlogEntryResource extends ResourceSupport {
+
     private String title;
 
     public String getTitle() {
@@ -22,4 +23,5 @@ public class BlogEntryResource extends ResourceSupport {
         entry.setTitle(title);
         return entry;
     }
+
 }

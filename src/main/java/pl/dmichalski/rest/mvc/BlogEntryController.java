@@ -15,6 +15,7 @@ import pl.dmichalski.rest.resources.asm.BlogEntryResourceAsm;
 @Controller
 @RequestMapping("/rest/blog-entries")
 public class BlogEntryController {
+    
     private BlogEntryService service;
 
     public BlogEntryController(BlogEntryService service) {

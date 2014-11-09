@@ -9,6 +9,7 @@ import pl.dmichalski.core.services.util.BlogList;
  * Author: Daniel
  */
 public interface BlogService {
+
     /**
      * @param blogId the id of the blog to add this BlogEntry to
      * @param data   the BlogEntry containing the data to be used for creating the new entity
@@ -21,5 +22,6 @@ public interface BlogService {
 
     public BlogEntryList findAllBlogEntries(Long blogId); // findBlog all associated blog entries
 
-    public Blog findBlog(Long eq);
+    public Blog findBlog(Long id);
+
 }

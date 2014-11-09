@@ -9,7 +9,9 @@ import java.util.List;
  * Author: Daniel
  */
 public class BlogEntryList {
+
     private List<BlogEntry> entries = new ArrayList<BlogEntry>();
+
     private Long blogId;
 
     public List<BlogEntry> getEntries() {
@@ -27,4 +29,5 @@ public class BlogEntryList {
     public void setBlogId(Long blogId) {
         this.blogId = blogId;
     }
+
 }

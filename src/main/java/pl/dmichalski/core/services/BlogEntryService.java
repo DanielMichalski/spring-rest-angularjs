@@ -6,6 +6,7 @@ import pl.dmichalski.core.models.entities.BlogEntry;
  * Author: Daniel
  */
 public interface BlogEntryService {
+
     public BlogEntry findBlogEntry(Long id); // Returns the BlogEntry or null if it can't be found
 
     public BlogEntry deleteBlogEntry(Long id); // Deletes the found BlogEntry or returns null if it can't be found

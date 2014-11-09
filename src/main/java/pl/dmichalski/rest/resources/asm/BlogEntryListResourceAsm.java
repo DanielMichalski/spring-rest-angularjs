@@ -14,6 +14,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
  * Author: Daniel
  */
 public class BlogEntryListResourceAsm extends ResourceAssemblerSupport<BlogEntryList, BlogEntryListResource> {
+
     public BlogEntryListResourceAsm() {
         super(BlogController.class, BlogEntryListResource.class);
     }
@@ -26,4 +27,5 @@ public class BlogEntryListResourceAsm extends ResourceAssemblerSupport<BlogEntry
         listResource.add(linkTo(methodOn(BlogController.class).findAllBlogEntries(list.getBlogId())).withSelfRel());
         return listResource;
     }
+
 }

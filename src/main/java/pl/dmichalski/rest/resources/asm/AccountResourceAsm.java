@@ -11,6 +11,7 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.*;
  * Author: Daniel
  */
 public class AccountResourceAsm extends ResourceAssemblerSupport<Account, AccountResource> {
+
     public AccountResourceAsm() {
         super(AccountController.class, AccountResource.class);
     }
@@ -23,4 +24,5 @@ public class AccountResourceAsm extends ResourceAssemblerSupport<Account, Accoun
         res.add(linkTo(methodOn(AccountController.class).getAccount(account.getId())).withSelfRel());
         return res;
     }
+
 }
