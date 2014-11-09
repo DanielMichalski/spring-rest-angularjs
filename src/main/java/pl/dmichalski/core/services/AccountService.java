@@ -3,7 +3,7 @@ package pl.dmichalski.core.services;
 import pl.dmichalski.core.models.entities.Account;
 import pl.dmichalski.core.models.entities.Blog;
 import pl.dmichalski.core.services.exceptions.BlogExistsException;
-import pl.dmichalski.core.services.util.AccountList;
+import pl.dmichalski.core.services.util.AccountsList;
 import pl.dmichalski.core.services.util.BlogList;
 
 /**
@@ -19,7 +19,7 @@ public interface AccountService {
 
     BlogList findBlogsByAccount(Long accountId);
 
-    AccountList findAllAccounts();
+    AccountsList findAllAccounts();
 
     Account findByAccountName(String name);
 

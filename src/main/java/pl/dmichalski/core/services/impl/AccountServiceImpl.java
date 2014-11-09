@@ -11,7 +11,7 @@ import pl.dmichalski.core.services.AccountService;
 import pl.dmichalski.core.services.exceptions.AccountDoesNotExistException;
 import pl.dmichalski.core.services.exceptions.AccountExistsException;
 import pl.dmichalski.core.services.exceptions.BlogExistsException;
-import pl.dmichalski.core.services.util.AccountList;
+import pl.dmichalski.core.services.util.AccountsList;
 import pl.dmichalski.core.services.util.BlogList;
 /**
  * Author: Daniel
@@ -67,8 +67,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public AccountList findAllAccounts() {
-        return new AccountList(accountRepo.findAllAccounts());
+    public AccountsList findAllAccounts() {
+        return new AccountsList(accountRepo.findAllAccounts());
     }
 
     @Override
