@@ -1,5 +1,6 @@
 package pl.dmichalski.rest.mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmichalski.core.models.entities.Blog;
-import pl.dmichalski.core.services.util.BlogEntryList;
 import pl.dmichalski.core.models.entities.BlogEntry;
 import pl.dmichalski.core.services.BlogService;
 import pl.dmichalski.core.services.exceptions.BlogNotFoundException;
+import pl.dmichalski.core.services.util.BlogEntryList;
 import pl.dmichalski.core.services.util.BlogList;
 import pl.dmichalski.rest.exceptions.NotFoundException;
 import pl.dmichalski.rest.resources.BlogEntryListResource;
@@ -33,11 +34,8 @@ import java.net.URI;
 @RequestMapping("/rest/blogs")
 public class BlogController {
 
+    @Autowired
     private BlogService blogService;
-
-    public BlogController(BlogService blogService) {
-        this.blogService = blogService;
-    }
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<BlogListResource> findAllBlogs() {

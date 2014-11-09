@@ -1,5 +1,6 @@
 package pl.dmichalski.rest.mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,12 +16,9 @@ import pl.dmichalski.rest.resources.asm.BlogEntryResourceAsm;
 @Controller
 @RequestMapping("/rest/blog-entries")
 public class BlogEntryController {
-    
-    private BlogEntryService service;
 
-    public BlogEntryController(BlogEntryService service) {
-        this.service = service;
-    }
+    @Autowired
+    private BlogEntryService service;
 
     @RequestMapping(value = "/{blogEntryId}",
             method = RequestMethod.GET)

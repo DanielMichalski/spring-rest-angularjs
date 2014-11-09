@@ -1,14 +1,23 @@
 package pl.dmichalski.core.models.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 /**
  * Author: Daniel
  */
+@Entity
 public class Blog {
 
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String title;
 
+    @ManyToOne
     private Account owner;
 
     public Long getId() {

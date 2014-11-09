@@ -1,5 +1,6 @@
 package pl.dmichalski.rest.mvc;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,11 +31,8 @@ import java.net.URI;
 @RequestMapping("/rest/accounts")
 public class AccountController {
 
+    @Autowired
     private AccountService accountService;
-
-    public AccountController(AccountService accountService) {
-        this.accountService = accountService;
-    }
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<AccountResource> createAccount(
